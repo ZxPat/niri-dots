@@ -1,0 +1,20 @@
+// Check the wiki for a full description of the configuration:
+// https://yalter.github.io/niri/Configuration:-Introduction
+
+
+
+//Inclusione dei vari file 
+include "./cfg/autostart.kdl"
+include "./cfg/keybinds.kdl"
+include "./cfg/input.kdl"
+include "./cfg/display.kdl"
+include "./cfg/layout.kdl"
+include "./cfg/rules.kdl"
+include "./cfg/animation.kdl"
+include "./cfg/misc.kdl"
+
+
+
+
+
+

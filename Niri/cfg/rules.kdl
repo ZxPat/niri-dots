@@ -1,0 +1,64 @@
+// Window rules let you adjust behavior for individual windows.
+// https://yalter.github.io/niri/Configuration:-Window-Rules
+
+// Example: enable rounded corners for all windows.
+window-rule {
+    geometry-corner-radius 20
+    clip-to-geometry true
+}
+
+//Necessaria a noctalia
+layer-rule {
+    match namespace="^noctalia-wallpaper*"
+    place-within-backdrop true
+}
+
+
+// Aprire floating
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Example: block out two password managers from screen capture.
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+
+
+//Apre finestre nel secondo monitor
+window-rule {
+    match app-id="discord$"
+    open-on-output "HDMI-A-!"
+}
+
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+}
+

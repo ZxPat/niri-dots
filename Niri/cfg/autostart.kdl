@@ -1,0 +1,27 @@
+// ────────────── Startup Applications ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
+// Note that running niri as a session supports xdg-desktop-autostart, which may be more convenient to use.
+
+//Senza shell, funziona come con spawn + combinazione tasti
+//spawn-at-startup "alacritty"
+
+
+// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
+spawn-sh-at-startup "qs -c noctalia-shell"
+spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
+
+
+
+
+
+
+
+
+
+
+
+
+hotkey-overlay {
+    // skip-at-startup
+}
+
