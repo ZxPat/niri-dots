@@ -2,7 +2,6 @@
 // https://yalter.github.io/niri/Configuration:-Introduction
 
 
-
 //Inclusione dei vari file 
 include "./cfg/autostart.kdl"
 include "./cfg/keybinds.kdl"
@@ -17,4 +16,5 @@ include "./cfg/misc.kdl"
 
 
 
+include "./noctalia.kdl"
 

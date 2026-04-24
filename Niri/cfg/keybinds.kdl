@@ -23,6 +23,16 @@ binds {
     MOD+B                          hotkey-overlay-title="Apre Browser: firefox" { spawn "firefox"; }
     MOD+ALT+L                      hotkey-overlay-title="Blocco schermo: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
 
+
+
+
+
+
+
+
+
+
+
     // ─── Audio Controls ───
     XF86AUDIORAISEVOLUME                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
     XF86AUDIOLOWERVOLUME                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
@@ -43,19 +53,23 @@ binds {
     MOD+H                               { focus-column-left; }
     MOD+RIGHT                           { focus-column-right; }
     MOD+L                               { focus-column-right; }
-    MOD+UP                              { focus-window-up; }
-    MOD+K                               { focus-window-up; }
-    MOD+DOWN                            { focus-window-down; }
-    MOD+J                               { focus-window-down; }
+    MOD+UP                              { focus-window-or-workspace-up; } //per tabbed
+    MOD+K                               { focus-window-or-workspace-up; }
+    MOD+DOWN                            { focus-window-or-workspace-down; }
+    MOD+J                               { focus-window-or-workspace-down; }
 
-    MOD+CTRL+LEFT                       { move-column-left; }
-    MOD+CTRL+H                          { move-column-left; }
-    MOD+CTRL+RIGHT                      { move-column-right; }
-    MOD+CTRL+L                          { move-column-right; }
+    MOD+CTRL+LEFT                       { move-column-left-or-to-monitor-left; }
+    MOD+CTRL+H                          { move-column-left-or-to-monitor-left; }
+    MOD+CTRL+RIGHT                      { move-column-right-or-to-monitor-right; }
+    MOD+CTRL+L                          { move-column-right-or-to-monitor-right; }
     MOD+CTRL+UP                         { move-window-up; }
     MOD+CTRL+K                          { move-window-up; }
     MOD+CTRL+DOWN                       { move-window-down; }
     MOD+CTRL+J                          { move-window-down; }
+
+
+    //Considerare anche move-window-down-or-to-workspace-down come scritto sotto
+
 
     // Alternative commands that move across workspaces when reaching
     // the first or last window in a column.
@@ -192,19 +206,19 @@ binds {
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
     // If the window is already in a column, they will expel it out.
-    Mod+BracketLeft  { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+BracketLeft                     { consume-or-expel-window-left; }
+    Mod+BracketRight                    { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
+    Mod+Comma                           { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    Mod+Period                          { expel-window-from-column; }
 
 
 
     // ─── Modes e dimensioni ───
 
-    Mod+R { switch-preset-column-width; }
+    Mod+R                               { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
     // Mod+R { switch-preset-column-width-back; }
 
@@ -238,8 +252,8 @@ binds {
     MOD+SHIFT+EQUAL                     { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+0     { toggle-window-floating; }
+    Mod+Shift+0 { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
