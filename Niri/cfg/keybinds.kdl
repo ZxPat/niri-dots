@@ -22,7 +22,7 @@ binds {
     MOD+RETURN                     hotkey-overlay-title="Apre App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     MOD+B                          hotkey-overlay-title="Apre Browser: firefox" { spawn "firefox"; }
     MOD+ALT+L                      hotkey-overlay-title="Blocco schermo: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-
+    MOD+D                          hotkey-overlay-title="Apre File manager: Thunar" { spawn "thunar"; }
 
 
 
@@ -272,8 +272,8 @@ binds {
 
     Print                               { screenshot; }
 //  MOD+P                               { screenshot; }
-    MOD+CTRL+P                          { screenshot-screen; }
-    MOD+ALT+P                           { screenshot-window; }
+//    MOD+CTRL+P                          { screenshot-screen; }
+//    MOD+ALT+P                           { screenshot-window; }
 
 // ─── Emergency Escape Key ───
     // Use this when a fullscreen app blocks your keybinds.

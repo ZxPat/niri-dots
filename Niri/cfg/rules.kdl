@@ -23,6 +23,12 @@ window-rule {
 
 window-rule {
     match app-id="thunar" title="^Rinomina "
+    match app-id="thunar" title="^Avanzamento delle operazione sui file"
+    open-floating true
+}
+
+window-rule {
+    match title="^Avanzamento delle operazione sui file"
     open-floating true
 }
 
